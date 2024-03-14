@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="Shortcut icon" href="https://cdn.icon-icons.com/icons2/2717/PNG/512/finn_the_human_icon_173830.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabuada</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background: url(https://s2-techtudo.glbimg.com/gy3n4D21YHImAh2Y4BywaCe82ZQ=/0x0:1440x810/984x0/smart/filters:strip_icc/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2022/V/X/mJmrU3QJywNNADYFF33A/273872373-2540965356037806-4385559091511954368-n.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        #container {
+            margin-top: 50px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            margin-right: 10px;
+            border-radius: 20px;
+        }
+
+        button {
+            padding: 2px 6px;
+            background-color: #0d42f0;
+            color: rgb(248, 248, 248);
+            border: none;
+            cursor: pointer;
+            border-radius: 20px;
+            box-sizing: border-box;
+            box-shadow: 5px 5px #0d1941;
+            text-align: center;
+        }
+
+        button img {
+            width: 30px;
+            border-radius: 50%;
+        }
+
+        button:hover {
+            background-color: #af330d;
+            transform: translateY(10%);
+        }
+
+        table {
+            text-align: center;
+            margin: auto;
+            background-color: #b91212fa;
+        }
+        table:hover {
+            text-align: center;
+            margin: auto;
+            background-color: rgb(154, 52, 15);
+        }
+        footer{
+        background-color: rgb(197, 68, 4);
+        color: rgb(175, 186, 12);
+        padding: 3px;
+        margin-left: 560px;
+        margin-bottom: 50px;
+        border-radius: 8px;     
+        position: absolute;
+        bottom: 0;
+        margin-top: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+
+}
+    </style>
+</head>
+
+<body>
+
+
+    <div id="container">
+        <h2>Gerador de Tabuada</h2>
+        <input type="number" id="numInput" placeholder="Digite um número">
+
+        <button onclick="geradorTabuada()">Gerar Tabuada <img
+                src="https://w7.pngwing.com/pngs/634/510/png-transparent-fifa-online-3-blackshot-garena-icon100-computer-icons-others-game-emblem-logo.png" alt="icone do finn"
+                alt="icon do finn"></button>
+
+        <div id="tabuada"></div>
+    </div>
+
+
+    <script>
+        function geradorTabuada() {
+            var numInput = document.getElementById("numInput").value;
+            var tabuadaDiv = document.getElementById("tabuada");
+            tabuadaDiv.innerHTML = "";
+
+
+            if (!numInput || isNaN(numInput)) {
+                tabuadaDiv.innerHTML = "<p>Por favor, insira um número válido.</p>";
+                return;
+            }
+
+
+            var tableHTML = "<h3>Tabuada do " + numInput + "</h3><table border='1'><tr><th>Número</th><th>Resultado</th></tr>";
+
+
+            for (var i = 1; i <= 10; i++) {
+                tableHTML += "<tr><td>" + numInput + " x " + i + "</td><td>" + (numInput * i) + "</td></tr>";
+            }
+
+
+            tableHTML += "</table>";
+            tabuadaDiv.innerHTML = tableHTML;
+        }
+    </script>
+
+    <footer>
+        <h2>Feito Por: <cite>arthurDias</cite> &copy;&reg;</h2>
+    </footer>
+</body>
+
+</html>
